@@ -24,3 +24,10 @@ for user in users:
     with open(path, "w") as f:
         f.write(base64.b64encode(wrapped).decode())
     print("Wrote", path)
+
+print("=== Share key files ===")
+for user in users:
+    filename = f"{user}_sharekey.txt"
+    with open(os.path.join(BASE_DIR, filename)) as f:
+        print(f"\n{filename}:")
+        print(f.read())    
